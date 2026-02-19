@@ -17,17 +17,7 @@ const MenuPreview = () => {
                 <InteractiveSlice />
             </div>
 
-            {/* Descriptive Text */}
-            <div className="container mx-auto px-6 text-center mt-12 max-w-2xl">
-                <h3 className="font-display text-3xl text-alabaster mb-4">Hot Pizza Italian Cuisine</h3>
-                <p className="font-body text-alabaster/70 leading-relaxed">
-                    Our dough is fermented for 72 hours, creating a light, airy crust that digests easily.
-                    Topped with San Marzano tomatoes and Buffalo Mozzarella derived directly from Campania.
-                </p>
-                <button className="mt-8 text-terracotta border-b border-terracotta hover:text-alabaster hover:border-alabaster transition-colors pb-1">
-                    View Full Menu
-                </button>
-            </div>
+
         </section>
     );
 };

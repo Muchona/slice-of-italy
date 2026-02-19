@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { galleryImages } from '../../data/gallery';
+import { getAssetPath } from '../../utils/paths';
 
 const GalleryPage = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -73,7 +74,7 @@ const GalleryPage = () => {
                             </div>
 
                             <img
-                                src={image}
+                                src={getAssetPath(image)}
                                 alt={`Gallery image ${index + 1}`}
                                 className="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 ease-in-out filter brightness-90 group-hover:brightness-100"
                                 loading="lazy"
@@ -122,7 +123,7 @@ const GalleryPage = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            src={selectedImage}
+                            src={getAssetPath(selectedImage)}
                             alt="Full screen view"
                             className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
                             onClick={(e) => e.stopPropagation()}

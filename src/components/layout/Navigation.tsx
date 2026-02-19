@@ -178,7 +178,7 @@ const Navigation = ({ onOpenOrder, onNavigate }: NavigationProps) => {
                     {/* Logo (Circular Crop) */}
                     <button onClick={() => handleNavigate('home')} className="flex items-center gap-3 group">
                         <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 group-hover:border-terracotta/50 transition-colors">
-                            <img src="/assets/logo.jpg" alt="Slice of Italy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                            <img src={logo} alt="Slice of Italy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <span className={`font-display text-lg tracking-wide transition-colors ${scrolled ? 'text-alabaster' : 'text-alabaster'}`}>
                             SLICE OF <span className="text-terracotta">ITALY</span>

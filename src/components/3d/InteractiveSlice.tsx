@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion';
+import { getAssetPath } from '../../utils/paths';
 
 const FrameSequence = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -28,7 +29,7 @@ const FrameSequence = () => {
     useEffect(() => {
         frames.forEach(frame => {
             const img = new Image();
-            img.src = `/assets/Pizza_animation/ezgif-frame-${frame.toString().padStart(3, '0')} 1.png`;
+            img.src = getAssetPath(`assets/Pizza_animation/ezgif-frame-${frame.toString().padStart(3, '0')} 1.png`);
         });
     }, [frames]);
 
@@ -58,7 +59,7 @@ const FrameSequence = () => {
                     {frames.map((frame) => (
                         <img
                             key={frame}
-                            src={`/assets/Pizza_animation/ezgif-frame-${frame.toString().padStart(3, '0')} 1.png`}
+                            src={getAssetPath(`assets/Pizza_animation/ezgif-frame-${frame.toString().padStart(3, '0')} 1.png`)}
                             alt=""
                             className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl will-change-transform"
                             style={{

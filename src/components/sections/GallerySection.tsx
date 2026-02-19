@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { galleryImages } from '../../data/gallery';
+import { getAssetPath } from '../../utils/paths';
 import Carousel3D from '../ui/Carousel3D';
 
 const GallerySection = ({ onViewGallery }: { onViewGallery: () => void }) => {
@@ -72,7 +73,7 @@ const GallerySection = ({ onViewGallery }: { onViewGallery: () => void }) => {
             <div className="relative z-20 w-full flex justify-center overflow-hidden">
                 <div className="scale-75 md:scale-100 origin-center transition-transform duration-500">
                     <Carousel3D
-                        images={galleryImages.slice(0, 8)}
+                        images={galleryImages.slice(0, 8).map(img => getAssetPath(img))}
                         radius={isMobile ? 210 : 500}
                         duration={60}
                         cardWidth={isMobile ? 120 : 200}

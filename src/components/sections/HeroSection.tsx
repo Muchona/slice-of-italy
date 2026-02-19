@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { Sparkles } from '@react-three/drei'
 import { motion } from 'framer-motion'
+import heroImage from '/assets/hero_image.jpg'
 
 const HeroSection = ({ onOpenOrder }: { onOpenOrder: () => void }) => {
     return (
@@ -14,7 +15,7 @@ const HeroSection = ({ onOpenOrder }: { onOpenOrder: () => void }) => {
             >
                 <div className="absolute inset-0 bg-espresso/40 z-10" />
                 <img
-                    src="/assets/hero_image.jpg"
+                    src={heroImage}
                     alt="Slice of Italy"
                     className="w-full h-full object-cover"
                 />

@@ -1,5 +1,6 @@
 import { useBusinessOpen } from '../../hooks/useBusinessOpen';
 import { Instagram, Facebook } from 'lucide-react';
+import { getAssetPath } from '../../utils/paths';
 
 const Footer = () => {
     const isOpen = useBusinessOpen();
@@ -12,7 +13,7 @@ const Footer = () => {
                 <div className="col-span-2 md:col-span-1 space-y-6">
                     <div className="flex flex-col items-start gap-4">
                         <div className="w-16 h-16 rounded-full overflow-hidden border border-white/10">
-                            <img src="/assets/logo.jpg" alt="Slice of Italy" className="w-full h-full object-cover" />
+                            <img src={getAssetPath("assets/logo.jpg")} alt="Slice of Italy" className="w-full h-full object-cover" />
                         </div>
                         <p className="text-alabaster/80 text-sm leading-relaxed max-w-xs font-body">
                             Neapolitan pizza made the Irish way.<br />
@@ -81,7 +82,7 @@ const Footer = () => {
                             rel="noopener noreferrer"
                             className="hover:opacity-100 transition-opacity"
                         >
-                            <img src="/assets/onyx_logo.png" alt="Onyx & Code" className="h-8 md:h-12 w-auto opacity-70" />
+                            <img src={getAssetPath("assets/onyx_logo.png")} alt="Onyx & Code" className="h-8 md:h-12 w-auto opacity-70" />
                         </a>
                         <span className="text-[10px] text-alabaster/60 uppercase tracking-widest font-body text-right md:text-left">
                             Designed by{' '}

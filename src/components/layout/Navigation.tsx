@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 // import { Menu, X } from 'lucide-react' -- REMOVED due to runtime crash
-import logo from '/assets/logo.jpg'
+import { getAssetPath } from '../../utils/paths'
 
 interface NavigationProps {
     onOpenOrder: () => void;
@@ -179,7 +179,7 @@ const Navigation = ({ onOpenOrder, onNavigate }: NavigationProps) => {
                     {/* Logo (Circular Crop) */}
                     <button onClick={() => handleNavigate('home')} className="flex items-center gap-3 group">
                         <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 group-hover:border-terracotta/50 transition-colors">
-                            <img src={logo} alt="Slice of Italy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                            <img src={getAssetPath("assets/logo.jpg")} alt="Slice of Italy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <span className={`font-display text-lg tracking-wide transition-colors ${scrolled ? 'text-alabaster' : 'text-alabaster'}`}>
                             SLICE OF <span className="text-terracotta">ITALY</span>

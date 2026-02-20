@@ -104,7 +104,7 @@ const MenuGrid = ({ onOpenOrder }: MenuGridProps) => {
                 {/* Grid */}
                 <motion.div
                     layout
-                    className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+                    className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8"
                 >
                     <AnimatePresence mode='popLayout'>
                         {filteredItems.map((item) => (
@@ -115,35 +115,36 @@ const MenuGrid = ({ onOpenOrder }: MenuGridProps) => {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
                                 key={item.id}
+                                className="h-full flex flex-col"
                             >
-                                <CardContainer containerClassName="w-full h-full !py-0 block">
-                                    <CardBody className="group relative bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/5 shadow-xl shadow-black/50 hover:shadow-2xl hover:shadow-terracotta/20 w-auto h-auto">
+                                <CardContainer containerClassName="w-full h-full !py-0 flex flex-col" className="w-full h-full flex flex-col">
+                                    <CardBody className="flex flex-col h-full w-full group relative bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/5 shadow-xl shadow-black/50 hover:shadow-2xl hover:shadow-terracotta/20">
                                         {/* Image Placeholder - Pops out */}
-                                        <CardItem translateZ="50" className="w-full">
-                                            <div className={`w-full h-64 ${item.color} flex items-center justify-center transition-colors duration-300 group-hover:bg-opacity-60`}>
-                                                <span className="text-white/20 font-display italic text-2xl">
+                                        <CardItem translateZ="50" className="w-full shrink-0">
+                                            <div className={`w-full h-32 md:h-64 ${item.color} flex items-center justify-center transition-colors duration-300 group-hover:bg-opacity-60`}>
+                                                <span className="text-white/20 font-display italic text-lg md:text-2xl text-center px-2">
                                                     {item.title}
                                                 </span>
                                             </div>
                                         </CardItem>
 
                                         {/* Content */}
-                                        <div className="p-6">
-                                            <CardItem translateZ="40" className="flex justify-between items-baseline mb-2">
-                                                <h3 className="font-display text-2xl text-alabaster group-hover:text-terracotta transition-colors">
+                                        <div className="p-4 md:p-6 flex flex-col flex-1">
+                                            <CardItem translateZ="40" className="flex flex-col xl:flex-row justify-between items-start xl:items-baseline mb-2 gap-1 md:gap-2">
+                                                <h3 className="font-display text-lg md:text-2xl text-alabaster group-hover:text-terracotta transition-colors">
                                                     {item.title}
                                                 </h3>
-                                                <span className="font-body text-lg text-terracotta font-medium">
+                                                <span className="font-body text-sm md:text-lg text-terracotta font-medium">
                                                     {item.price}
                                                 </span>
                                             </CardItem>
 
-                                            <CardItem translateZ="30" as="p" className="font-body text-alabaster/70 text-sm leading-relaxed">
+                                            <CardItem translateZ="30" as="p" className="font-body text-alabaster/70 text-xs md:text-sm leading-relaxed mb-4">
                                                 {item.description}
                                             </CardItem>
 
-                                            <CardItem translateZ="20" className="mt-4 pt-4 border-t border-white/10 flex justify-end">
-                                                <span className="text-xs font-bold uppercase tracking-widest text-terracotta opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <CardItem translateZ="20" className="mt-auto pt-4 border-t border-white/10 flex justify-end">
+                                                <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-terracotta md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                                                     Add to Order
                                                 </span>
                                             </CardItem>
